@@ -10,3 +10,5 @@ const factional = (n: number) => {
 const ans = factional(10);
 console.log(ans);
 
+
+
