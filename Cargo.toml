@@ -9,6 +9,11 @@ repository = 'https://github.com/fuyutarow/snippets-make'
 keywords = ['snippet']
 categories = ['command-line-utilities']
 readme = 'README.md'
+[package.metadata.rpm.cargo]
+buildflags = ['--release']
+target = 'x86_64-unknown-linux-musl'
+[package.metadata.rpm.targets.procs]
+path = '/usr/bin/snippets-make'
 
 [lib]
 name = 'cli'
