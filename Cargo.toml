@@ -1,6 +1,6 @@
 [package]
 name = 'snippets-make'
-version = '0.202104.1'
+version = '0.202104.2'
 edition = '2018'
 authors = ['fuyutarow <fuyutarow@gmail.com>']
 

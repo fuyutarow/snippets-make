@@ -157,7 +157,7 @@ dependencies = [
 
 [[package]]
 name = "snippets-make"
-version = "0.202104.1"
+version = "0.202104.2"
 dependencies = [
  "serde",
  "serde_derive",
