@@ -1,15 +1,14 @@
 [package]
-name = 'snippets-make'
 version = '0.202104.2'
+name = 'snippets-make'
+description = 'A CLI tool for code snippets'
 edition = '2018'
+license = 'MIT'
 authors = ['fuyutarow <fuyutarow@gmail.com>']
-repository = "https://github.com/fuyutarow/snippets-make"
-keywords = ["snippet"]
-categories = ["command-line-utilities"]
-license = "MIT"
-readme = "README.md"
-description = "A CLI tool for code snippets"
-edition = "2018"
+repository = 'https://github.com/fuyutarow/snippets-make'
+keywords = ['snippet']
+categories = ['command-line-utilities']
+readme = 'README.md'
 
 [lib]
 name = 'cli'
