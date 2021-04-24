@@ -34,5 +34,6 @@ release_mac:
 
 release_rpm:
 	mkdir -p target
+	cargo rpm init
 	cargo rpm build
 	cp target/x86_64-unknown-linux-musl/release/rpmbuild/RPMS/x86_64/* ./
