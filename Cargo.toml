@@ -1,5 +1,5 @@
 [package]
-version = '0.202104.6'
+version = '0.202104.7'
 name = 'snippets-make'
 description = 'A CLI tool for code snippets'
 edition = '2018'
