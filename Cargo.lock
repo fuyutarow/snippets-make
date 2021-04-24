@@ -44,17 +44,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "dot-snippets"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_derive",
- "serde_json",
- "structopt",
- "toml",
-]
-
-[[package]]
 name = "heck"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -164,6 +153,17 @@ dependencies = [
  "itoa",
  "ryu",
  "serde",
+]
+
+[[package]]
+name = "snippets-make"
+version = "0.202104.1"
+dependencies = [
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "structopt",
+ "toml",
 ]
 
 [[package]]

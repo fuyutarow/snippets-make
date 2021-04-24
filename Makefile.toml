@@ -1,0 +1,18 @@
+[tasks.hot.run_task]
+name = [
+    'build',
+    'move-bin',
+]
+
+[tasks.move-bin]
+script = ['''
+mkdir -p bin
+cp ./target/release/dot-snippets ./bin/
+''']
+
+[tasks.build]
+command = 'cargo'
+args = [
+    'build',
+    '--release',
+]
