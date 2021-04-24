@@ -1,5 +1,5 @@
 [package]
-version = '0.202104.5'
+version = '0.202104.6'
 name = 'snippets-make'
 description = 'A CLI tool for code snippets'
 edition = '2018'
@@ -25,7 +25,7 @@ serde_derive = '1.0.125'
 toml = '0.5.8'
 structopt = '0.3.21'
 serde_json = '1.0.64'
-os_info = "3.0.2"
-dirs = "3.0.1"
-itertools = "0.10.0"
-anyhow = "1.0.40"
+os_info = '3.0.2'
+dirs = '3.0.1'
+itertools = '0.10.0'
+anyhow = '1.0.40'

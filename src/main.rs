@@ -12,7 +12,7 @@ struct Opt {
     #[structopt(parse(from_os_str,))]
     fpath: PathBuf,
 
-    /// Snippet format of output. [possible values: vscode, neosnippet]
+    /// Snippet format of output. [possible values: vscode, neosnippet, ultisnips]
     #[structopt(short = "-t", long = "--to", default_value = "vscode")]
     to: String,
 
@@ -44,14 +44,18 @@ fn main() {
                                 vscode_path.into_os_string().into_string().expect("")
                             );
                         } else {
-                            println!("{} is not a suppored editor. [possible value: vscode, vscode-insiders]", editor);
+                            println!("{} is not a suppored editor. [possible values: vscode, vscode-insiders]", editor);
                         }
                     } else {
                         config.print_vscode();
                     }
                 }
                 "neosnippet" => config.print_neosnippet(),
-                _ => {}
+                "ultisnips" => config.print_ultisnps(),
+                _ => {
+                    println!(
+                        "Snippet format of output. [possible values: vscode, neosnippet, ultisnips]");
+                }
             }
         }
         _ => {}

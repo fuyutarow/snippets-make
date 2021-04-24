@@ -121,6 +121,17 @@ impl Config {
             println!("");
         }
     }
+
+    pub fn print_ultisnps(&self) {
+        for (name, dot_snippet) in self.clone().snippets.into_iter() {
+            println!("snippet {}", name);
+            for line in dot_snippet.body.lines() {
+                println!("{}", line);
+            }
+            println!("endsnippet");
+            println!("");
+        }
+    }
 }
 
 fn get_vscode_path(vscode: &str) -> Option<PathBuf> {
