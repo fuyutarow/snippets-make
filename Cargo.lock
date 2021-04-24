@@ -257,7 +257,7 @@ dependencies = [
 
 [[package]]
 name = "snippets-make"
-version = "0.202104.7"
+version = "0.202104.8"
 dependencies = [
  "anyhow",
  "dirs",
