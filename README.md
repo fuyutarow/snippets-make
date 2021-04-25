@@ -40,7 +40,7 @@ ARGS:
     <fpath>    Input toml file
 ```
 
-### `snippets-make -t`
+### `snippets-make -t <to>`
 
 from [samples/typescript](https://github.com/fuyutarow/snippets-make/blob/alpha/samples/typescript.toml)
 ```toml
@@ -98,7 +98,7 @@ endsnippet
 ```
 
 
-### `snippets-make --over`
+### `snippets-make --over <over>`
 
 Run with the --over option to overwrite the vscode snippet configuration file.
 ```

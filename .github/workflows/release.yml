@@ -74,6 +74,6 @@ jobs:
             {
               "bin_name": "${{ steps.set_envs.outputs.bin_name }}",
               "version": "${{ steps.set_envs.outputs.version }}",
-              "sha_linux": "${{ steps.build_linux.outputs.sha }}"
+              "sha_linux": "${{ steps.build_linux.outputs.sha }}",
               "sha_mac": "${{ steps.build_mac.outputs.sha }}"
             }
