@@ -42,8 +42,7 @@ ARGS:
 
 ### `snippets-make -t`
 
-
-from [samples/typescript](https://github.com/fuyutarow/snippets-make/samples/typescript.toml)
+from [samples/typescript](https://github.com/fuyutarow/snippets-make/blob/alpha/samples/typescript.toml)
 ```toml
 lang = 'typescript'
 [snippets.gcd]
@@ -82,7 +81,6 @@ snippet gcd
 
 ```
 
-
 to ultisnips
 ```
 $ snippets-make samples/typescript.toml -t ultisnips
@@ -97,4 +95,22 @@ const factional = (n: number) => {
   return n <= 1 ? 1 : n * factional(n - 1);
 };
 endsnippet
+```
+
+
+### `snippets-make --over`
+
+Run with the --over option to overwrite the vscode snippet configuration file.
+```
+snippets-make samples/typescript.toml --over vscode
+```
+
+This is equivalent to the following for a mac
+```
+snippets-make samples/typescript.toml > ~/Library/Application Support/Code/User/snippets/typescript.json
+```
+
+for Windows
+```
+cargo snippet -t vscode > $(wslpath "$(wslvar USERPROFILE)")/AppData/Roaming/Code/User/snippets/typescript.json
 ```
