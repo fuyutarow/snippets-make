@@ -3,3 +3,8 @@ script = ['''
 version-make up -rz Cargo.toml
 cargo build --release
 ''']
+
+[tasks.version-tag]
+script = ['''
+git tag v$(version-make show Cargo.toml)
+''']
