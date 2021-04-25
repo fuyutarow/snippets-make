@@ -1,5 +1,3 @@
-use std::fs;
-use std::io::Write;
 use std::path::PathBuf;
 use structopt::StructOpt;
 
@@ -26,12 +24,7 @@ struct Opt {
 
 fn main() {
     match Opt::from_args() {
-        Opt {
-            fpath,
-            to,
-            // out,
-            over,
-        } => {
+        Opt { fpath, to, over } => {
             let config = Config::from_fpath(fpath);
 
             match to.as_str() {
@@ -58,6 +51,5 @@ fn main() {
                 }
             }
         }
-        _ => {}
     }
 }
