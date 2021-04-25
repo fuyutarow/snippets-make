@@ -1,18 +1,5 @@
-[tasks.hot.run_task]
-name = [
-    'build',
-    'move-bin',
-]
-
-[tasks.move-bin]
+[tasks.version-up]
 script = ['''
-mkdir -p bin
-cp ./target/release/dot-snippets ./bin/
+version-make up -rz Cargo.toml
+cargo build --release
 ''']
-
-[tasks.build]
-command = 'cargo'
-args = [
-    'build',
-    '--release',
-]

@@ -1,11 +1,9 @@
-use itertools::Itertools;
 use serde_derive::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::ffi::OsStr;
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 #[derive(Debug, Deserialize, Serialize)]
 struct RawDotSnippet {
@@ -80,8 +78,9 @@ impl Config {
     }
 
     fn from_toml(toml_str: &str) -> Self {
-        let rawConfig = toml::from_str::<RawConfig>(toml_str).expect("failed to parse config file");
-        Self::from(rawConfig)
+        let raw_config =
+            toml::from_str::<RawConfig>(toml_str).expect("failed to parse config file");
+        Self::from(raw_config)
     }
 
     pub fn to_vscode(&self) -> String {
