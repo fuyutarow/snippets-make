@@ -112,5 +112,5 @@ snippets-make samples/typescript.toml > ~/Library/Application Support/Code/User/
 
 for Windows
 ```
-cargo snippet -t vscode > $(wslpath "$(wslvar USERPROFILE)")/AppData/Roaming/Code/User/snippets/typescript.json
+snippets-make snippets/typescript.toml > $(wslpath "$(wslvar USERPROFILE)")/AppData/Roaming/Code/User/snippets/typescript.json
 ```
