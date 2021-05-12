@@ -99,7 +99,7 @@ impl Config {
     }
 
     pub fn write_vscode(&self, editor: &str) -> anyhow::Result<PathBuf> {
-        match get_vscode_path(editor) {
+        match self.get_vscode_path(editor) {
             Some(vscode_path) => {
                 let mut f = fs::File::create(&vscode_path).expect("failed to create file");
                 f.write_all(self.to_vscode().as_bytes())
@@ -131,20 +131,20 @@ impl Config {
             println!("");
         }
     }
-}
 
-fn get_vscode_path(vscode: &str) -> Option<PathBuf> {
-    if let Some(config_path) = dirs::config_dir() {
-        match os_info::get().os_type() {
-            os_info::Type::Macos if vscode == "vscode" => {
-                Some(config_path.join("Code/User/snippets/typescript.json"))
+    fn get_vscode_path(&self, vscode: &str) -> Option<PathBuf> {
+        if let Some(config_path) = dirs::config_dir() {
+            match os_info::get().os_type() {
+                os_info::Type::Macos if vscode == "vscode" => {
+                    Some(config_path.join(format!("Code/User/snippets/{}.json", self.lang)))
+                }
+                os_info::Type::Macos if vscode == "vscode-insiders" => Some(
+                    config_path.join(format!("Code - Insiders/User/snippets/{}.json", self.lang)),
+                ),
+                _ => None,
             }
-            os_info::Type::Macos if vscode == "vscode-insiders" => {
-                Some(config_path.join("Code - Insiders/User/snippets/typescript.json"))
-            }
-            _ => None,
+        } else {
+            None
         }
-    } else {
-        None
     }
 }
